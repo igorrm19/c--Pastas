@@ -2,6 +2,8 @@
 #include <stack>
 #include <string>
 
+//ffff
+
 std::string validarExpressao(const std::string& expressao) {
     std::stack<char> pilha;
     int indice = 0;
