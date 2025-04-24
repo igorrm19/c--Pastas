@@ -3,10 +3,10 @@
 #include <string>
 
 //fff
-///ggg
+///gggbbbbb
 
 std::string validarExpressao(const std::string& expressao) {
-    std::stack<char> pilha;hhh
+    std::stack<char> pilha;
     int indice = 0;
 
     for (char caractere : expressao) {kk
