@@ -3,7 +3,7 @@
 #include <string>
 
 //fff
-kkkkk
+///ggg
 
 std::string validarExpressao(const std::string& expressao) {
     std::stack<char> pilha;
