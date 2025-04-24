@@ -9,7 +9,7 @@ std::string validarExpressao(const std::string& expressao) {
     std::stack<char> pilha;hhh
     int indice = 0;
 
-    for (char caractere : expressao) {
+    for (char caractere : expressao) {kk
         indice++;
 
         if (caractere == '(' || caractere == '[' || caractere == '{') {
