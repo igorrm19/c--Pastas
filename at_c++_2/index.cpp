@@ -4,7 +4,7 @@
 
 //fff
 ///ggg
-
+hh
 std::string validarExpressao(const std::string& expressao) {
     std::stack<char> pilha;hhh
     int indice = 0;
