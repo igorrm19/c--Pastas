@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stack>
 #include <string>
-
+//fainor
 std::string validarExpressao(const std::string& expressao) {
     std::stack<char> pilha;
     int indice = 0;
