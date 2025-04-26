@@ -1,7 +1,15 @@
 #include <iostream>
 #include <stack>
 #include <string>
-//fainor
+<<<<<<< HEAD
+
+//teste github kaua
+=======
+//kauaaaaaaaa
+//fff
+///ggg
+
+>>>>>>> 6b91fdb7b8d326659799cda78a1f7fddcb7d4ef4
 std::string validarExpressao(const std::string& expressao) {
     std::stack<char> pilha;
     int indice = 0;
