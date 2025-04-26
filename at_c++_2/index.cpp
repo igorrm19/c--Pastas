@@ -3,15 +3,20 @@
 #include <string>
 <<<<<<< HEAD
 
-//teste github kaua
+//teste github kaua 123
 =======
 //kauaaaaaaaa
 //fff
 ///ggg
+<<<<<<< HEAD
 
 >>>>>>> 6b91fdb7b8d326659799cda78a1f7fddcb7d4ef4
+=======
+hhkkjj
+666
+>>>>>>> c62c9912d84906683b675032fd46b22a69374aed
 std::string validarExpressao(const std::string& expressao) {
-    std::stack<char> pilha;
+    std::stack<char> pilha;hhh
     int indice = 0;
 
     for (char caractere : expressao) {
@@ -53,3 +58,4 @@ int main() {
 
     return 0;
 }
+teste
