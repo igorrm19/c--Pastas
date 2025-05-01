@@ -1,10 +1,24 @@
 #include <iostream>
 #include <stack>
 #include <string>
+<<<<<<< HEAD
 
+//teste github kaua 123
+=======
+//kauaaaaaaaa
 //fff
 ///ggg
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+>>>>>>> 6b91fdb7b8d326659799cda78a1f7fddcb7d4ef4
+=======
+hhkkjj
+666
+>>>>>>> c62c9912d84906683b675032fd46b22a69374aed
+>>>>>>> eea65100cb3e64162a75ca2a6c7b295acb6db845
 std::string validarExpressao(const std::string& expressao) {
     std::stack<char> pilha;hhh
     int indice = 0;
