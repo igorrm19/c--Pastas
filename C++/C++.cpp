@@ -100,11 +100,11 @@ void alocarVaga() {
             filaEntrada.pop_front();
             vagas[i] = new Veiculo(v);
             estacionamento.push_back(v);
-            cout << "Veículo " << v.placa << " estacionado na vaga "<<i<< << endl;
+            cout << "Veículo " << v.placa << " estacionado na vaga "<<i<< endl;
             return;
         }
     }
-    cout << "Sem vagas disponíveis." << eendl;
+    cout << "Sem vagas disponíveis." << endl;
 }
 void moverParaSaida(string placa) {
     for (auto it = estacionamento.begin(); it != estacionamento.end(); ++it) {
