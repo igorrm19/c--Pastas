@@ -106,3 +106,41 @@ void alocarVaga() {
     }
     cout << "Sem vagas disponíveis." << eendl;
 }
+void moverParaSaida(string placa) {
+    for (auto it = estacionamento.begin(); it != estacionamento.end(); ++it) {
+        if (it->placa == placa) {
+            for (int i = 0; i < MAX_VAGAS; ++i) {
+                if (vagas[i] && vagas[i]->placa == placa) {
+                    delete vagas[i];
+                    vagas[i] = nullptr;
+                    break;
+                }
+            }
+
+            filaSaida.push_back(*it);
+            estacionamento.erase(it);
+            cout << "Veículo " << placa << " movido para fila de saída." << endl;
+            return;
+        }
+    }
+    cout << "Veículo não encontrado no estacionamento." << endl;
+}
+
+void sairDoEstacionamento(bool pelaFrente) {
+    if (filaSaida.empty()) {
+        cout << "Fila de saída vazia." << endl;
+        return;
+    }
+
+    Veiculo v = (pelaFrente ? filaSaida.front() : filaSaida.back());
+    if (pelaFrente)
+        filaSaida.pop_front();
+    else
+        filaSaida.pop_back();
+
+    ofstream hist("historico.txt", ios::app);
+    hist << "Saída: " << v.placa << " (" << tipoToString(v.tipo) << ")\n";
+    hist.close();
+
+    cout << "Veículo " << v.placa << " saiu do estacionamento." << endl;
+}
