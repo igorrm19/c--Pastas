@@ -144,3 +144,79 @@ void sairDoEstacionamento(bool pelaFrente) {
 
     cout << "Veículo " << v.placa << " saiu do estacionamento." << endl;
 }
+
+void listar() {
+    cout << "\n--- Fila de Entrada ---\n";
+    for (auto v : filaEntrada) {
+        cout << v.placa << " - " << tipoToString(v.tipo) << endl;
+    }
+
+    cout << "\n--- Estacionados ---\n";
+    for (auto v : estacionamento) {
+        cout << v.placa << " - " << tipoToString(v.tipo) << endl;
+    }
+
+    cout << "\n--- Fila de Saída ---\n";
+    for (auto v : filaSaida) {
+        cout << v.placa << " - " << tipoToString(v.tipo) << endl;
+    }
+}
+
+void liberarMemoria() {
+    for (auto& v : vagas) {
+        delete v;
+        v = nullptr;
+    }
+}
+
+void menu() {
+    int opcao;
+    string placa;
+
+    do {
+        cout << "\n===== MENU =====\n";
+        cout << "1 - Adicionar veículo à fila de entrada\n";
+        cout << "2 - Alocar veículo em vaga\n";
+        cout << "3 - Mover veículo para saída\n";
+        cout << "4 - Sair do estacionamento\n";
+        cout << "5 - Listar status\n";
+        cout << "0 - Encerrar\n";
+        cout << "Escolha: ";
+        cin >> opcao;
+
+        switch (opcao) {
+            case 1:
+                adicionarVeiculo();
+                break;
+            case 2:
+                alocarVaga();
+                break;
+            case 3:
+                cout << "Placa do veículo para mover à saída: ";
+                cin >> placa;
+                moverParaSaida(placa);
+                break;
+            case 4:
+                int porta;
+                cout << "Sair pela (1) frente ou (2) fundo? ";
+                cin >> porta;
+                sairDoEstacionamento(porta == 1);
+                break;
+            case 5:
+                listar();
+                break;
+            case 0:
+                liberarMemoria();
+                cout << "Encerrando sistema.\n";
+                break;
+            default:
+                cout << "Opção inválida.\n";
+        }
+
+    } while (opcao != 0);
+}
+
+int main() {
+    menu();
+    return 0;
+}
