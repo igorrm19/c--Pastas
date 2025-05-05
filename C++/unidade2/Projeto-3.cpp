@@ -62,36 +62,7 @@ void adicionarVeiculo() {
 
     cout << "Veículo " << placa << " adicionado à fila de entrada." << endl;
 }
-void adicionarVeiculo() {
-    string placa;
-    int tipo;
 
-    cout << "Placa: ";
-    cin >> placa;
-
-    cout << "Tipo (0-Comum, 1-Prioritário, 2-Emergência, 3-Serviço): ";
-    cin >> tipo;
-
-    if (tipo < 0 || tipo > 3) {
-        cout << "Tipo inválido!"<< endl ;
-        return;
-    }
-
-    Veiculo v(placa, static_cast<TipoVeiculo>(tipo));
-
-    if (v.tipo == EMERGENCIA) {
-        filaEntrada.push_front(v);
-    } else if (v.tipo == PRIORITARIO) {
-        auto it = filaEntrada.begin();
-        while (it != filaEntrada.end() && it->tipo == EMERGENCIA)
-            ++it;
-        filaEntrada.insert(it, v);
-    } else {
-        filaEntrada.push_back(v);
-    }
-
-    cout << "Veículo " << placa << " adicionado à fila de entrada." << endl;
-}
 
 void alocarVaga() {
     for (int i = 0; i < MAX_VAGAS && !filaEntrada.empty(); ++i) {
